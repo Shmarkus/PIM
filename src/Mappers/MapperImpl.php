@@ -3,6 +3,7 @@
 namespace Mappers;
 
 use Entities\Invoice;
+use Extractors\Extractor;
 use Extractors\FileExtractor;
 
 /**
@@ -21,11 +22,27 @@ class MapperImpl implements Mapper
     private $_logger;
 
     /**
+     * @var Extractor
+     */
+    private $_extractor;
+
+    /**
      * AbstractParser constructor.
      */
     public function __construct()
     {
         $this->_logger = new \Logger(get_class($this));
+        $this->setExtractor(new FileExtractor());
+    }
+
+    /**
+     * Set current extractor
+     *
+     * @param \Extractors\Extractor $extractor Extractor to use in this class
+     */
+    public function setExtractor($extractor)
+    {
+        $this->_extractor = $extractor;
     }
 
     /**
@@ -41,9 +58,8 @@ class MapperImpl implements Mapper
     public function map(\ArrayObject $invoices, $pathToSource, $parserName)
     {
         $results = new \ArrayObject();
-        $extractor = new FileExtractor();
-        $extractor->extractPayments($pathToSource, $parserName);
-        $payments = $extractor->getPayments();
+        $this->_extractor->extractPayments($pathToSource, $parserName);
+        $payments = $this->_extractor->getPayments();
         foreach ($payments as $payment) {
             foreach ($invoices as $invoice) {
                 if ($invoice instanceof Invoice) {
@@ -58,6 +74,7 @@ class MapperImpl implements Mapper
                     if (($payment->getReferenceNo() == $invoice->getReferenceNo() && $payment->getReferenceNo() != '')
                         || ($orderNoMatch || $invoiceNoMatch)
                     ) {
+                        $payment->setRelatedInvoice($invoice);
                         $results->append($payment);
                     }
                 } else {
@@ -68,4 +85,5 @@ class MapperImpl implements Mapper
         }
         return $results;
     }
+
 }

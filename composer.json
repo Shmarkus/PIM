@@ -2,7 +2,7 @@
   "name": "CodeHouse/PaymentInvoiceMapper",
   "description": "Payment-invoice mapper. The component maps incoming invoices with provided payments from file.",
   "license": "GNU GPL3",
-  "version": "1.1",
+  "version": "1.2",
   "type": "library",
   "minimum-stability": "stable",
   "keywords": [

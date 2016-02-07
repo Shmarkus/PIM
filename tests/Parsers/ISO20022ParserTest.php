@@ -1,13 +1,9 @@
 <?php
+use Mockery as m;
 
-/**
- * Created by PhpStorm.
- * User: markus
- * Date: 5.02.16
- * Time: 15:46
- */
 class ISO20022ParserTest extends PHPUnit_Framework_TestCase
 {
+
     private $RESOURCE_PATH = '/../resources/';
 
     /**
@@ -18,19 +14,10 @@ class ISO20022ParserTest extends PHPUnit_Framework_TestCase
     public function testShouldReturnPayments()
     {
         $extractor = new \Extractors\FileExtractor();
-        $data = $extractor->readFile(dirname(__FILE__) . $this->RESOURCE_PATH . 'swedStmt.xml');
-        $payment = new \Entities\Payment('196.80', '2016010700183611-1', 'Arve nr. 8/NE', 'KUMMIHAI OÜ');
+        $data = $extractor->readFile(dirname(__FILE__) . $this->RESOURCE_PATH . 'iso20022.xml');
+        $payment = new \Entities\Payment('123.45', '2016010700183611-1', 'Arve nr. 8/NE', 'Company OÜ');
         $payments = $this->_parser->parseData($data);
-        $this->assertEquals($payment, $payments->offsetGet(1));
-    }
-
-    public function testShouldReturnPaymentsIncoming()
-    {
-        $extractor = new \Extractors\FileExtractor();
-        $data = $extractor->readFile(dirname(__FILE__) . $this->RESOURCE_PATH . 'swedLaek.xml');
-        $payment = new \Entities\Payment('75.00', '2016010400180147-1', 'Arve nr.274/RA', 'SOO OSAUHING');
-        $payments = $this->_parser->parseData($data);
-        $this->assertEquals($payment, $payments->offsetGet(1));
+        $this->assertEquals($payment, $payments->offsetGet(0));
     }
 
     protected function setUp()

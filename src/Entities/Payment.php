@@ -16,6 +16,11 @@ class Payment
     private $_payerName;
 
     /**
+     * @var Invoice
+     */
+    private $_relatedInvoice;
+
+    /**
      * Payment constructor.
      *
      * @param string $amount Amount paid with the payment
@@ -115,6 +120,22 @@ class Payment
     public function setPayerName($payer)
     {
         $this->_payerName = $payer;
+    }
+
+    /**
+     * @return Invoice
+     */
+    public function getRelatedInvoice()
+    {
+        return $this->_relatedInvoice;
+    }
+
+    /**
+     * @param Invoice $relatedInvoice
+     */
+    public function setRelatedInvoice(Invoice $relatedInvoice)
+    {
+        $this->_relatedInvoice = $relatedInvoice;
     }
 
 

@@ -3,7 +3,6 @@
 out
 gen
 /resources
-/tests/resources/*
 /vendor
 composer.lock
 composer.phar
