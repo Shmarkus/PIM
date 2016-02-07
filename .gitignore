@@ -1,0 +1,9 @@
+# IntelliJ project files
+.idea
+out
+gen
+/resources
+/tests/resources/*
+/vendor
+composer.lock
+composer.phar
