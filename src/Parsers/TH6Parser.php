@@ -24,6 +24,7 @@ class TH6Parser extends AbstractParser implements Parser
      *
      * @param string $stream Stream of data to parse to payments
      * @return \ArrayObject
+     * @throws \Exception when format is unrecognized
      */
     public function parseData($stream)
     {
