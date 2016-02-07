@@ -30,13 +30,6 @@ class FileExtractorTest extends PHPUnit_Framework_TestCase
         $this->_extractor->readFile(dirname(__FILE__) . $this->RESOURCE_PATH . 'emptyFile.csv');
     }
 
-    public function testShouldReturnFileContents()
-    {
-        $data = '[{"Invoice": "A1234","Account": "EE000001","Amount": 12.5,"Description": "blah blah"},{"Invoice": "B4321","Account": "EE000002","Amount": 1500,"Description": "This is a test"}]';
-        $contents = $this->_extractor->readFile(dirname(__FILE__) . $this->RESOURCE_PATH . 'payments.json');
-        $this->assertEquals($data, $contents);
-    }
-
     protected function setUp()
     {
         parent::setUp();

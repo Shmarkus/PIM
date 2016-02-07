@@ -13,6 +13,7 @@ class Payment
     private $_paymentNo;
     private $_description;
     private $_referenceNo;
+    private $_payerName;
 
     /**
      * Payment constructor.
@@ -20,13 +21,15 @@ class Payment
      * @param string $amount Amount paid with the payment
      * @param string $paymentNo Unique bank payment number
      * @param string $description Value from payment description
+     * @param string $payerName Payer name
      * @param string $referenceNo Payment reference number, if exists. Default empty string
      */
-    public function __construct($amount, $paymentNo, $description, $referenceNo = '')
+    public function __construct($amount, $paymentNo, $description, $payerName, $referenceNo = '')
     {
         $this->_amount = $amount;
         $this->_paymentNo = $paymentNo;
         $this->_description = $description;
+        $this->_payerName = $payerName;
         $this->_referenceNo = $referenceNo;
     }
 
@@ -97,4 +100,22 @@ class Payment
     {
         $this->_referenceNo = $referenceNo;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPayerName()
+    {
+        return $this->_payerName;
+    }
+
+    /**
+     * @param mixed $payer
+     */
+    public function setPayerName($payer)
+    {
+        $this->_payerName = $payer;
+    }
+
+
 }

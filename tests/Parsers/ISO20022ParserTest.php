@@ -19,7 +19,7 @@ class ISO20022ParserTest extends PHPUnit_Framework_TestCase
     {
         $extractor = new \Extractors\FileExtractor();
         $data = $extractor->readFile(dirname(__FILE__) . $this->RESOURCE_PATH . 'swedStmt.xml');
-        $payment = new \Entities\Payment('196.80', '2016010700183611-1', 'Arve nr. 8/NE', '');
+        $payment = new \Entities\Payment('196.80', '2016010700183611-1', 'Arve nr. 8/NE', 'KUMMIHAI OÜ');
         $payments = $this->_parser->parseData($data);
         $this->assertEquals($payment, $payments->offsetGet(1));
     }
@@ -28,7 +28,7 @@ class ISO20022ParserTest extends PHPUnit_Framework_TestCase
     {
         $extractor = new \Extractors\FileExtractor();
         $data = $extractor->readFile(dirname(__FILE__) . $this->RESOURCE_PATH . 'swedLaek.xml');
-        $payment = new \Entities\Payment('75.00', '2016010400180147-1', 'Arve nr.274/RA', '');
+        $payment = new \Entities\Payment('75.00', '2016010400180147-1', 'Arve nr.274/RA', 'SOO OSAUHING');
         $payments = $this->_parser->parseData($data);
         $this->assertEquals($payment, $payments->offsetGet(1));
     }

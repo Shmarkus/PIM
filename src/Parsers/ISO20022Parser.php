@@ -36,7 +36,8 @@ class ISO20022Parser extends AbstractParser implements Parser
                     $amount = $element->Amt->__toString();
                     $paymentNo = $element->NtryRef->__toString();
                     $invoice = $element->NtryDtls->TxDtls->RmtInf->Ustrd->__toString();
-                    $result->append(new Payment($amount, $paymentNo, $invoice, ''));
+                    $payer = $element->NtryDtls->TxDtls->RltdPties->Dbtr->Nm;
+                    $result->append(new Payment($amount, $paymentNo, $invoice, $payer));
                 }
             }
         } else {
