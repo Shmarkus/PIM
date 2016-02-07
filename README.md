@@ -1,3 +1,7 @@
+Staatus
+========================
+[![Build Status](https://travis-ci.org/Shmarkus/PIM.png)](https://travis-ci.org/Shmarkus/PIM)
+
 Kasutamine
 ========================
 Lae projekt composeriga külge
