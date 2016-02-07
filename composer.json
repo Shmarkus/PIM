@@ -1,8 +1,24 @@
 {
-  "name": "PaymentInvoiceMapper",
-  "description": "Maps provided invoices with payments extracted from provided file",
+  "name": "CodeHouse/PaymentInvoiceMapper",
+  "description": "Payment-invoice mapper. The component maps incoming invoices with provided payments from file.",
   "license": "GNU GPL3",
   "version": "1.0",
+  "type": "library",
+  "keywords": [
+    "ISO20022",
+    "TH6",
+    "invoice",
+    "payment",
+    "mapper"
+  ],
+  "homepage": "https://github.com/Shmarkus/PIM",
+  "authors": [
+    {
+      "name": "Markus Karileet",
+      "email": "markus.karileet@codehouse.ee",
+      "homepage": "http://codehouse.ee"
+    }
+  ],
   "require": {
     "apache/log4php": "*",
     "mockery/mockery": "^0.9.4"
