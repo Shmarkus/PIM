@@ -20,10 +20,14 @@ class ISO20022ParserTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($payment, $payments->offsetGet(0));
     }
 
+    public function tearDown()
+    {
+        m::close();
+    }
+
     protected function setUp()
     {
         parent::setUp();
         $this->_parser = new \Parsers\ISO20022Parser();
     }
-
 }
