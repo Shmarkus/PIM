@@ -24,6 +24,12 @@ class ParserFactoryImpl implements ParserFactory
                 return new ISO20022Parser();
             case 'TH6':
                 return new TH6Parser();
+            case 'Nordea':
+                return new NordeaParser();
+            case 'NordeaTH':
+                return new NordeaTHParser();
+            case 'SEBTransactionImport':
+                return new SEBTransactionImportParser();
             default:
                 throw new \Exception('Unknown parser: ' . $name);
         }
