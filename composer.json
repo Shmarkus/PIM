@@ -7,7 +7,7 @@
   "minimum-stability": "stable",
   "keywords": [
     "ISO20022",
-    "TH6",
+    "TeleHansa",
     "invoice",
     "payment",
     "mapper"

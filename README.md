@@ -1,4 +1,4 @@
-##Staatus
+##Status
 [![Build Status](https://travis-ci.org/Shmarkus/PIM.png)](https://travis-ci.org/Shmarkus/PIM)
 
 ##When should I use this library?
@@ -30,6 +30,7 @@ By now You are ready to clone the library to Your project with the following com
     php composer.phar update
     
 Dont forget to include `vendor/autoload.php` in Your bootstrap script, such as index.php
+
 ###Usage
 When the library is loaded, create a entity class that will hold Your invoices from the system so that it will implement
 \Entities\Invoice interface (You can access PIM classes via namespaces now, since Composer did all the heavy lifting).
@@ -71,3 +72,12 @@ If the default extractor doesn't cut it for You, You can create a new Extractor.
 data from a webservice or other source than a file. In this case You'd need to create a ExtractorFactory, much like 
 ParserFactory and create new Extractor that extends \Extractors\AbstractExtractor class and implements \Extractors\Extractor
 interface!
+
+##Component model
+![Component diagram](https://github.com/Shmarkus/PIM/blob/master/doc/Components.png "Component diagram")
+
+##Class diagram
+![Class diagram](https://github.com/Shmarkus/PIM/blob/master/doc/System.png "Class diagram")
+
+##Sequence diagram
+![Sequence diagram](https://github.com/Shmarkus/PIM/blob/master/doc/Sequence.png "Sequence diagram")
