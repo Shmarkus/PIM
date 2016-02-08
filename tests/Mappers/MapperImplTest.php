@@ -53,6 +53,12 @@ class MapperImplTest extends PHPUnit_Framework_TestCase
 
         $mapped = $this->_mapper->map($invoices, 'file_is_mocked.csv', 'TH6');
         $this->assertEquals(3, $mapped->count());
+
+        for ($i = 0; $i < 3; $i++) {
+            $this->assertEquals($invoices->offsetGet($i), $mapped->offsetGet($i)->getRelatedInvoice());
+            $this->assertEquals($invoices->offsetGet($i)->getAmount(), $mapped->offsetGet($i)->getAmount());
+        }
+
     }
 
     public function tearDown()
