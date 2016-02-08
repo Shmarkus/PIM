@@ -1,30 +1,73 @@
-Staatus
-========================
+##Staatus
 [![Build Status](https://travis-ci.org/Shmarkus/PIM.png)](https://travis-ci.org/Shmarkus/PIM)
 
-Kasutamine
-========================
-Lae projekt composeriga külge
-Loo oma projekti andmetüüp, mis implementeerib interface, mille leiab \Entities\Invoice 
-Loe süsteemist arved, mille tasumist on vaja kontrollida
-Lisa iga arve loodud andmetüübina ArrayObject massiivi
+##When should I use this library?
+If You have some kind of e-commerce system that manages orders and You need to match bank transactions with the orders
+to determine whether order has been paid or not, then You'd want to use this library!
 
-Käivita \Mappers\MapperImpl::map() funktsioon, esimese parameetrina anna eelnevalt loodud ArrayObject, teise parameetrina
-teekond sisendandmestikuni (failini) ning viimase parameetrina parseri nimi (parser oskab faili tõlgendada).
+##How to use
+###Prerequisite
+This library is composer friendly, so the most convenient way is to get composer
 
-Laiendamine
------------------------
-Hetkel võimalikud parseri nimetused on: ISO20022 ja TH6. Parsereid võib juurde luua. Iga parser peab laiendama 
-\Parsers\AbstractParser klassi ja implementeerima Parser interfeissi. Peale parseri loomist tuleb selle nimi registreerida
-\Parsers\ParserFactory::getParser() meetodis.
+    curl -sS https://getcomposer.org/installer | php
 
-Põhimõtteliselt on võimalik realiseerida ka Extractoreid, juhul kui sisendandmestik on muul kujul kui fail. Extractori
-lisamisel peab loodav klass laiendama \Extractors\AbstractParser ja implementeerima \Extractors\Extractor interfeissi. 
+Then, create composer.json file (for more info, see https://getcomposer.org) and add repository (under root node)
 
-Arhitektuur
-========================
-Süsteem koosneb järgmistest kihtidest: 
- - Mapper, mille eesmärgiks on andmete lugemine andmeallikast ja nende võrdlemine ette antud arvemassiiviga
- - Extractor, mille eesmärgiks on andmeallikast maksete sisselugemine töötlemata kujul
- - ParserFactory, mille eesmärgiks on tagastada õige parser vastavalt failile
- - Parser, mille eesmärgiks on töötlemata kujul andmete konverteerimine makseteks
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/Shmarkus/PIM"
+        }
+    ]
+And after that, include the project
+
+    "require": {
+        "codehouse/paymentinvoicemapper" : "*"
+    }
+    
+By now You are ready to clone the library to Your project with the following command (php has to be in Your PATH)
+
+    php composer.phar update
+    
+Dont forget to include `vendor/autoload.php` in Your bootstrap script, such as index.php
+###Usage
+When the library is loaded, create a entity class that will hold Your invoices from the system so that it will implement
+\Entities\Invoice interface (You can access PIM classes via namespaces now, since Composer did all the heavy lifting).
+When the class is ready, create a function that will retrieve all invoices that have not been paid yet and assign them
+to Your Invoice object. Since You probably have more than 1 invoice, You have to create ArrayObject of them e.g.
+
+    ...
+    $invoices = new ArrayObject();
+    while ($item = $query->fetch(PDO::FETCH_ASSOC)) {
+        $invoices->append(new YourInvoiceObject($item['amount'], $item['invoiceNo'], $item['orderNo'], $item['referenceNo']))
+    }
+    ...
+    
+By this point Your invoices are ready to be mapped, the next step is to get the payments to map with! In this example,
+I assume, that user uploads a file that contains the payments from the bank. The uploaded file is in ISO20022 format.
+For other formats see section 'Extending'. 
+
+In this example, user posts file from a web page, the file HTML name is import.
+
+    ...
+    $mapper = new \Mappers\MapperImpl();
+    try {
+        $paidInvoices = $mapper->map($invoices, $_FILE['import']['tmp_name'], 'ISO20022');
+        updateInvoices($paidInvoices);
+    } catch (Exception $e) { .. }
+    ...
+    
+The mapper function returns Payments (see \Entities\Payments) that matched with invoices. In order to update Your invoice
+table, You have to take the return value of map() function and update Your table accordingly
+
+##Extending
+###Basics
+If You have a special kind of file format, create a new Parser to mapper/src/Parsers. It has to extend the 
+\Parsers\AbstractParser class and implement \Parsers\Parser interface (see examples like \Parsers\ISO20022Parser).
+When Your parser is ready, create new entry to \Parsers\ParserFactory::getParser() method (add new case statement).
+Now You can use Your new parser by passing Your parser name to map() functions last argument!
+###Advanced
+If the default extractor doesn't cut it for You, You can create a new Extractor. This would happen if You need to read
+data from a webservice or other source than a file. In this case You'd need to create a ExtractorFactory, much like 
+ParserFactory and create new Extractor that extends \Extractors\AbstractExtractor class and implements \Extractors\Extractor
+interface!
