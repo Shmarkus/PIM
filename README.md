@@ -53,7 +53,7 @@ In this example, user posts file from a web page, the file HTML name is import.
     ...
     $mapper = new \Mappers\MapperImpl();
     try {
-        $paidInvoices = $mapper->map($invoices, $_FILE['import']['tmp_name'], 'ISO20022');
+        $paidInvoices = $mapper->map($invoices, $_FILE['import']['tmp_name'], 'ISO20022', 'File');
         updateInvoices($paidInvoices);
     } catch (Exception $e) { .. }
     ...
@@ -65,13 +65,15 @@ table, You have to take the return value of map() function and update Your table
 ###Basics
 If You have a special kind of file format, create a new Parser to mapper/src/Parsers. It has to extend the 
 \Parsers\AbstractParser class and implement \Parsers\Parser interface (see examples like \Parsers\ISO20022Parser).
-When Your parser is ready, create new entry to \Parsers\ParserFactory::getParser() method (add new case statement).
-Now You can use Your new parser by passing Your parser name to map() functions last argument!
+When Your parser is ready, create new entry to \Parsers\ParserFactoryImpl::getParser() method to register Your new parser 
+(add new case statement).
+Now You can use Your new parser by passing Your parser name to map() functions third argument!
 ###Advanced
-If the default extractor doesn't cut it for You, You can create a new Extractor. This would happen if You need to read
-data from a webservice or other source than a file. In this case You'd need to create a ExtractorFactory, much like 
-ParserFactory and create new Extractor that extends \Extractors\AbstractExtractor class and implements \Extractors\Extractor
-interface!
+If the default extractor doesn't cut it for You, You can create new Extractors. This would happen if You need to read
+data from a webservice or other source than a file. In this case You'd need to create a new Extractor that implements 
+\Extractors\Extractor interface and then register Your new extractor in \Extractors\ExtractorFactoryImpl::getExtractor()
+method (add new case statement).
+Now You can use Your new extractor by passing Your extractor name to map() functions fourth parameter!
 
 ##Component model
 ![Component diagram](https://github.com/Shmarkus/PIM/blob/master/doc/Components.png "Component diagram")

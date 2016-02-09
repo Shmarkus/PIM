@@ -3,8 +3,8 @@
 namespace Mappers;
 
 use Entities\Invoice;
-use Extractors\Extractor;
-use Extractors\FileExtractor;
+use Extractors\ExtractorFactory;
+use Extractors\ExtractorFactoryImpl;
 
 /**
  * Implementation of mapper. Use this to map invoices with payments
@@ -22,27 +22,27 @@ class MapperImpl implements Mapper
     private $_logger;
 
     /**
-     * @var Extractor
+     * @var ExtractorFactory
      */
-    private $_extractor;
+    private $_extractorFactory;
 
     /**
-     * AbstractParser constructor.
+     * MapperImpl constructor.
      */
     public function __construct()
     {
         $this->_logger = new \Logger(get_class($this));
-        $this->setExtractor(new FileExtractor());
+        $this->setExtractorFactory(new ExtractorFactoryImpl());
     }
 
     /**
-     * Set current extractor
+     * Set current extractor factory
      *
-     * @param \Extractors\Extractor $extractor Extractor to use in this class
+     * @param ExtractorFactory $factory Extractor factory to use in this class
      */
-    public function setExtractor($extractor)
+    public function setExtractorFactory($factory)
     {
-        $this->_extractor = $extractor;
+        $this->_extractorFactory = $factory;
     }
 
     /**
@@ -51,15 +51,17 @@ class MapperImpl implements Mapper
      * @param \ArrayObject $invoices Invoices to check
      * @param string $pathToSource Absolute path source, that contains payments
      * @param string $parserName Name of the parser to use while parsing file (see ParserFactory class)
+     * @param string $extractorName Name of the extractor to use, default is 'File'
      *
      * @return \ArrayObject List of invoices that were paid
      * @throws \Exception When file parsing fails, exception is thrown
      */
-    public function map(\ArrayObject $invoices, $pathToSource, $parserName)
+    public function map(\ArrayObject $invoices, $pathToSource, $parserName, $extractorName = 'File')
     {
         $results = new \ArrayObject();
-        $this->_extractor->extractPayments($pathToSource, $parserName);
-        $payments = $this->_extractor->getPayments();
+        $extractor = $this->_extractorFactory->getExtractor($extractorName);
+        $extractor->extractPayments($pathToSource, $parserName);
+        $payments = $extractor->getPayments();
         foreach ($payments as $payment) {
             foreach ($invoices as $invoice) {
                 if ($invoice instanceof Invoice) {
