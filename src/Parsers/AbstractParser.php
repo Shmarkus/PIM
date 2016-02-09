@@ -7,7 +7,7 @@ namespace Parsers;
  *
  * @package Parsers
  */
-abstract class AbstractParser implements Parser
+abstract class AbstractParser
 {
     /**
      * Array of payments retrieved using parser

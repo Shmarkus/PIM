@@ -10,7 +10,7 @@ use Parsers\ParserFactoryImpl;
  *
  * @package Extractors
  */
-abstract class AbstractExtractor implements Extractor
+abstract class AbstractExtractor
 {
     /**
      * Attribute to hold extracted payments
