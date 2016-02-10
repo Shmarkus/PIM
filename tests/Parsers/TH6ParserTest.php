@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: markus
- * Date: 5.02.16
- * Time: 12:49
- */
 class TH6ParserTest extends PHPUnit_Framework_TestCase
 {
     /**

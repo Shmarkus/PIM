@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: markus
- * Date: 5.02.16
- * Time: 12:05
- */
 class ExtractorFactoryImplTest extends PHPUnit_Framework_TestCase
 {
     /**

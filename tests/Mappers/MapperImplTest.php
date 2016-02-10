@@ -1,4 +1,5 @@
 <?php
+
 use Mockery as m;
 
 class MapperImplTest extends PHPUnit_Framework_TestCase
@@ -25,10 +26,7 @@ class MapperImplTest extends PHPUnit_Framework_TestCase
         $extractorMock->shouldReceive('extractPayments')->times(1);
         $extractorMock->shouldReceive('getPayments')->times(1)->andReturn($payments);
 
-        $extractorFactoryMock = m::mock('extractorFactory');
-        $extractorFactoryMock->shouldReceive('getExtractor')->times(1)->andReturn($extractorMock);
-
-        $this->_mapper->setExtractorFactory($extractorFactoryMock);
+        $this->_mapper->setExtractor($extractorMock);
         $this->_mapper->map($invoices, 'file_is_mocked.xml', 'ISO20022');
         $this->fail('Should have thrown exception!');
     }
@@ -52,10 +50,7 @@ class MapperImplTest extends PHPUnit_Framework_TestCase
         $extractorMock->shouldReceive('extractPayments')->times(1);
         $extractorMock->shouldReceive('getPayments')->times(1)->andReturn($payments);
 
-        $extractorFactoryMock = m::mock('extractorFactory');
-        $extractorFactoryMock->shouldReceive('getExtractor')->times(1)->andReturn($extractorMock);
-
-        $this->_mapper->setExtractorFactory($extractorFactoryMock);
+        $this->_mapper->setExtractor($extractorMock);
 
         $mapped = $this->_mapper->map($invoices, 'file_is_mocked.csv', 'TH6');
         $this->assertEquals(3, $mapped->count());

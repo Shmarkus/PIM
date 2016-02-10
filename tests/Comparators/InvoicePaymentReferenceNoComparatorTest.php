@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: markus
- * Date: 9.02.16
- * Time: 23:52
- */
 class InvoicePaymentReferenceNoComparatorTest extends PHPUnit_Framework_TestCase
 {
     /**

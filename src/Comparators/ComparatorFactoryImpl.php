@@ -2,7 +2,6 @@
 
 namespace Comparators;
 
-
 class ComparatorFactoryImpl implements ComparatorFactory
 {
     /**

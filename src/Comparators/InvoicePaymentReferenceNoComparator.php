@@ -2,7 +2,6 @@
 
 namespace Comparators;
 
-
 use Entities\Invoice;
 use Entities\Payment;
 

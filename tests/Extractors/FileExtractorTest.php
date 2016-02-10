@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: markus
- * Date: 5.02.16
- * Time: 11:50
- */
 class FileExtractorTest extends PHPUnit_Framework_TestCase
 {
     private $RESOURCE_PATH = '/../resources/';

@@ -2,7 +2,6 @@
 
 namespace Entities;
 
-
 class SampleInvoice implements Invoice
 {
     private $_amount;

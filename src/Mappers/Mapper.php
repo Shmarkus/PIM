@@ -15,10 +15,8 @@ interface Mapper
      * @param \ArrayObject $invoices Invoices to check
      * @param string $pathToSource Absolute path source, that contains payments
      * @param string $parserName Name of the parser to use while parsing file (see ParserFactory class)
-     * @param string $comparatorName Name of the comparator to use
-     * @param string $extractorName Name of the extractor to use
      *
      * @return \ArrayObject List of invoices that were paid
      */
-    public function map(\ArrayObject $invoices, $pathToSource, $parserName, $comparatorName, $extractorName);
+    public function map(\ArrayObject $invoices, $pathToSource, $parserName);
 }
