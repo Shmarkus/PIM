@@ -1,5 +1,6 @@
 ##Status
 [![Build Status](https://travis-ci.org/Shmarkus/PIM.png)](https://travis-ci.org/Shmarkus/PIM)
+[![GitHub version](https://img.shields.io/github/tag/shmarkus/pim.svg)](https://github.com/Shmarkus/PIM)
 
 ##When should I use this library?
 If You have some kind of e-commerce system that manages orders and You need to match bank transactions with the orders
@@ -7,11 +8,11 @@ to determine whether order has been paid or not, then You'd want to use this lib
 
 ##How to use
 ###Prerequisite
-This library is composer friendly, so the most convenient way is to get composer
+This library is composer friendly, so the most convenient way is to get composer (for more info, see https://getcomposer.org)
 
     curl -sS https://getcomposer.org/installer | php
 
-Then, create composer.json file (for more info, see https://getcomposer.org) and add repository (under root node)
+Then, create composer.json file and add repository (under root node)
 
     "repositories": [
         {
@@ -46,14 +47,14 @@ to Your Invoice object. Since You probably have more than 1 invoice, You have to
     
 By this point Your invoices are ready to be mapped, the next step is to get the payments to map with! In this example,
 I assume, that user uploads a file that contains the payments from the bank. The uploaded file is in ISO20022 format.
-For other formats see section 'Extending'. 
+For other formats and sources see section 'Extending'. 
 
 In this example, user posts file from a web page, the file HTML name is import.
 
     ...
     $mapper = new \Mappers\MapperImpl();
     try {
-        $paidInvoices = $mapper->map($invoices, $_FILE['import']['tmp_name'], 'ISO20022', 'File');
+        $paidInvoices = $mapper->map($invoices, $_FILE['import']['tmp_name'], 'ISO20022');
         updateInvoices($paidInvoices);
     } catch (Exception $e) { .. }
     ...
@@ -73,7 +74,16 @@ If the default extractor doesn't cut it for You, You can create new Extractors. 
 data from a webservice or other source than a file. In this case You'd need to create a new Extractor that implements 
 \Extractors\Extractor interface and then register Your new extractor in \Extractors\ExtractorFactoryImpl::getExtractor()
 method (add new case statement).
-Now You can use Your new extractor by passing Your extractor name to map() functions fourth parameter!
+The same thing goes for comparison logic. To use other than default comparison method, create new Comparator that
+extends the \Comparators\Comparator interface and register Your new comparator in \Comparators\ComparatorFactoryImpl::getComparator() method
+
+Now You can use Your new extractor and comparator when invoking Mapper object like this:
+
+    ...
+    $mapper = new \Mappers\MapperImpl('YourComparatorName', 'YourExtractorName');
+    ...
+
+The default comparator is 'IPRNo' and extractor is 'File'
 
 ##Component model
 ![Component diagram](https://github.com/Shmarkus/PIM/blob/master/doc/Components.png "Component diagram")
