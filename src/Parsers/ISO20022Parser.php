@@ -11,6 +11,12 @@ use Entities\Payment;
  */
 class ISO20022Parser extends AbstractParser implements Parser
 {
+    /**
+     * Your invoice number regular expression pattern. This is meant to match invoices such as 1234/ABCDE
+     *
+     * @var string
+     */
+    private $_pattern = '/[0-9]+.[a-zA-Z]+/';
 
     public function __construct()
     {
@@ -36,8 +42,14 @@ class ISO20022Parser extends AbstractParser implements Parser
                     $amount = $element->Amt->__toString();
                     $paymentNo = $element->NtryRef->__toString();
                     $invoice = $element->NtryDtls->TxDtls->RmtInf->Ustrd->__toString();
+                    preg_match_all($this->_pattern, $invoice, $matches);
                     $payer = $element->NtryDtls->TxDtls->RltdPties->Dbtr->Nm;
-                    $result->append(new Payment($amount, $paymentNo, $invoice, $payer));
+                    //multiple invoices paid
+                    if (count($matches[0]) > 0) {
+                        foreach ($matches[0] as $match) {
+                            $result->append(new Payment($amount, $paymentNo, $match, $payer));
+                        }
+                    }
                 }
             }
         } else {
