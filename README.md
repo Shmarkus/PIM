@@ -8,11 +8,11 @@ to determine whether order has been paid or not, then You'd want to use this lib
 
 ##How to use
 ###Prerequisite
-This library is composer friendly, so the most convenient way is to get composer (for more info, see https://getcomposer.org)
+This library is [Composer](https://getcomposer.org) friendly, so the most convenient way is to get Composer
 
     curl -sS https://getcomposer.org/installer | php
 
-Include the project
+Get the project from Packagist
 
     php composer.phar require codehouse/payment-invoice-mapper
     
@@ -37,7 +37,7 @@ while ($item = $query->fetch(PDO::FETCH_ASSOC)) {
     
 By this point Your invoices are ready to be mapped, the next step is to get the payments to map with! In this example,
 I assume, that user uploads a file that contains the payments from the bank. The uploaded file is in **ISO20022** format.
-For other formats and sources see [Extending](extending). 
+For other formats and sources see [Extending](#extending). 
 
 In this example, user posts file from a web page, the file HTML name is *import*.
 
