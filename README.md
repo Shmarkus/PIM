@@ -12,21 +12,11 @@ This library is composer friendly, so the most convenient way is to get composer
 
     curl -sS https://getcomposer.org/installer | php
 
-Then, create composer.json file and add repository (under root node)
+Then, include the project
 
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/Shmarkus/PIM"
-        }
-    ]
-And after that, include the project
-
-    "require": {
-        "codehouse/paymentinvoicemapper" : "*"
-    }
+    php composer.phar require codehouse/payment-invoice-mapper
     
-By now You are ready to clone the library to Your project with the following command (php has to be in Your PATH)
+By now You are ready to clone the library to Your project with the following command
 
     php composer.phar update
     
