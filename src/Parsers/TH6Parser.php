@@ -33,8 +33,12 @@ class TH6Parser extends AbstractParser implements Parser
         foreach (array_filter($rows) as $row) {
             $item = explode(";", $row);
             if (count($item) > 11) {
-                $payment = new Payment($this->_stripQuotes($item[8]), $this->_stripQuotes($item[10]), $this->_stripQuotes($item[11]), $this->_stripQuotes($item[4]));
-                $result->append($payment);
+                //multiple invoices paid
+                if ($matches = $this->_getMatches($this->_stripQuotes($item[11]))) {
+                    foreach ($matches as $match) {
+                        $result->append(new Payment($this->_stripQuotes($item[8]), $this->_stripQuotes($item[10]), $match, $this->_stripQuotes($item[4])));
+                    }
+                }
             } else {
                 throw new \Exception('File format unrecognized: ' . $row);
             }

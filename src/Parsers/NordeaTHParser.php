@@ -37,8 +37,12 @@ class NordeaTHParser extends AbstractParser implements Parser
                 $description = trim(substr($row, 122, 75));
                 $payerName = trim(substr($row, 77, 30));
                 $referenceNo = "";//TODO: in what location is reference no?
-                $payment = new Payment($amount, $paymentNo, $description, $payerName, $referenceNo);
-                $result->append($payment);
+                //multiple invoices paid
+                if ($matches = $this->_getMatches($description)) {
+                    foreach ($matches as $match) {
+                        $result->append(new Payment($amount, $paymentNo, $match, $payerName, $referenceNo));
+                    }
+                }
             }
         }
         return $result;

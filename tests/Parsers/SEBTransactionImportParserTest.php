@@ -58,7 +58,7 @@ arve.nr 895/IT
 DATA;
         $payments = $this->_parser->parseData($data);
         $this->assertEquals(2, $payments->count());
-        $this->assertEquals(new \Entities\Payment('48,00', 'R1755898361L02', 'Arve nr. 905/IT', 'YOURCOMPANY O�'), $payments->offsetGet(0));
+        $this->assertEquals(new \Entities\Payment('48,00', 'R1755898361L02', '905/IT', 'YOURCOMPANY O�'), $payments->offsetGet(0));
     }
 
     protected function setUp()

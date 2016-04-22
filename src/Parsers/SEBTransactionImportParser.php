@@ -44,8 +44,12 @@ class SEBTransactionImportParser extends AbstractParser implements Parser
                 $description = trim($trimmedRows[$i + $descriptionPadding]);
                 $payerName = trim($trimmedRows[$i + $payerNamePadding]);
                 $referenceNo = "";//TODO: in what location is reference no?
-                $payment = new Payment($amount, $paymentNo, $description, $payerName, $referenceNo);
-                $result->append($payment);
+                //multiple invoices paid
+                if ($matches = $this->_getMatches($description)) {
+                    foreach ($matches as $match) {
+                        $result->append(new Payment($amount, $paymentNo, $match, $payerName, $referenceNo));
+                    }
+                }
                 //skip the entry
                 $i = $i + $trimmedRows[$i + 1];
             }

@@ -33,8 +33,12 @@ class NordeaParser extends AbstractParser implements Parser
         foreach (array_filter($rows) as $row) {
             $item = explode(";", $row);
             if (count($item) == 12) {
-                $payment = new Payment($this->_stripQuotes($item[6]), $this->_stripQuotes($item[8]), $this->_stripQuotes($item[9]), $this->_stripQuotes($item[4]), $this->_stripQuotes($item[7]));
-                $result->append($payment);
+                //multiple invoices paid
+                if ($matches = $this->_getMatches($this->_stripQuotes($item[9]))) {
+                    foreach ($matches as $match) {
+                        $result->append(new Payment($this->_stripQuotes($item[6]), $this->_stripQuotes($item[8]), $match, $this->_stripQuotes($item[4]), $this->_stripQuotes($item[7])));
+                    }
+                }
             } else {
                 throw new \Exception('File format unrecognized: ' . $row);
             }
