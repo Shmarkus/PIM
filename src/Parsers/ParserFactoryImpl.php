@@ -20,8 +20,10 @@ class ParserFactoryImpl implements ParserFactory
     public function getParser($name)
     {
         switch ($name) {
-            case 'ISO20022':
-                return new ISO20022Parser();
+            case 'ISO20022-52':
+                return new ISO2002252Parser();
+            case 'ISO20022-53':
+                return new ISO2002253Parser();
             case 'TH6':
                 return new TH6Parser();
             case 'Nordea':

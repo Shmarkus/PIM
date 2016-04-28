@@ -9,7 +9,7 @@ use Entities\Payment;
  *
  * @package Parsers
  */
-class ISO20022Parser extends AbstractParser implements Parser
+abstract class ISO20022Parser extends AbstractParser implements Parser
 {
     public function __construct()
     {
@@ -29,7 +29,7 @@ class ISO20022Parser extends AbstractParser implements Parser
         $result = new \ArrayObject();
 
         if ($xml = simplexml_load_string($stream)) {
-            $rpt = $xml->BkToCstmrAcctRpt->Rpt;
+            $rpt = $this->getElement($xml);
             foreach ($rpt->children() as $element) {
                 if ($element->getName() == 'Ntry') {
                     $amount = $element->Amt->__toString();
@@ -50,4 +50,5 @@ class ISO20022Parser extends AbstractParser implements Parser
         return $result;
     }
 
+    abstract public function getElement($xml);
 }

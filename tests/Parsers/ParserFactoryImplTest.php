@@ -17,8 +17,8 @@ class ParserFactoryImplTest extends PHPUnit_Framework_TestCase
 
     public function testShouldReturnISO20022Parser()
     {
-        $parser = $this->_parserFactory->getParser("ISO20022");
-        $this->assertTrue($parser instanceof \Parsers\ISO20022Parser);
+        $parser = $this->_parserFactory->getParser("ISO20022-52");
+        $this->assertTrue($parser instanceof \Parsers\ISO2002252Parser);
     }
 
     public function testShouldReturnTH6Parser()

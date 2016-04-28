@@ -1,0 +1,2517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:iso:std:iso:20022:tech:xsd:camt.053.001.02"
+          xsi:schemaLocation="urn:iso:std:iso:20022:tech:xsd:camt.053.001.02 camt.053.001.02.xsd">
+    <BkToCstmrStmt>
+        <GrpHdr>
+            <MsgId>10223923</MsgId>
+            <CreDtTm>2016-04-26T08:59:14</CreDtTm>
+        </GrpHdr>
+
+        <Stmt>
+            <Id>10223923EUR</Id>
+            <CreDtTm>2016-04-26T08:59:14</CreDtTm>
+            <FrToDt>
+                <FrDtTm>2016-04-21T00:00:00</FrDtTm>
+
+                <ToDtTm>2016-04-22T23:59:59</ToDtTm>
+
+            </FrToDt>
+            <Acct>
+                <Id>
+                    <IBAN>EE197700000000000000</IBAN>
+                </Id>
+                <Ccy>EUR</Ccy>
+                <Svcr>
+                    <FinInstnId>
+                        <BIC>LHVBEE22XXX</BIC>
+                        <Nm>Testing</Nm>
+                        <PstlAdr>
+                            <AdrTp>BIZZ</AdrTp>
+                            <StrtNm>Tartu mnt.</StrtNm>
+                            <BldgNb>2</BldgNb>
+                            <PstCd>10145</PstCd>
+                            <TwnNm>Tallinn</TwnNm>
+                            <CtrySubDvsn>Harjumaa</CtrySubDvsn>
+                            <Ctry>EE</Ctry>
+                        </PstlAdr>
+                    </FinInstnId>
+                </Svcr>
+            </Acct>
+
+            <Bal>
+                <Tp>
+                    <CdOrPrtry>
+                        <Cd>OPBD</Cd>
+                    </CdOrPrtry>
+                </Tp>
+                <Amt Ccy="EUR">37.11</Amt>
+                <CdtDbtInd>CRDT</CdtDbtInd>
+                <Dt>
+                    <Dt>2016-04-21</Dt>
+                </Dt>
+            </Bal>
+
+            <Bal>
+                <Tp>
+                    <CdOrPrtry>
+                        <Cd>CLBD</Cd>
+                    </CdOrPrtry>
+                </Tp>
+                <Amt Ccy="EUR">570.13</Amt>
+                <CdtDbtInd>CRDT</CdtDbtInd>
+                <Dt>
+                    <Dt>2016-04-22</Dt>
+                </Dt>
+            </Bal>
+
+            <TxsSummry>
+                <TtlCdtNtries>
+                    <NbOfNtries>8</NbOfNtries>
+                    <Sum>1249.60</Sum>
+                </TtlCdtNtries>
+                <TtlDbtNtries>
+                    <NbOfNtries>10</NbOfNtries>
+                    <Sum>716.58</Sum>
+                </TtlDbtNtries>
+            </TxsSummry>
+
+            <Ntry>
+                <Amt Ccy="EUR">657.60</Amt>
+                <CdtDbtInd>CRDT</CdtDbtInd>
+                <Sts>BOOK</Sts>
+                <BookgDt>
+                    <Dt>2016-04-21</Dt>
+                </BookgDt>
+                <AcctSvcrRef>201604211036406432-038846158</AcctSvcrRef>
+                <BkTxCd>
+                    <Domn>
+
+                        <Cd>PMNT</Cd>
+                        <Fmly>
+
+
+                            <Cd>RCDT</Cd>
+
+
+                            <SubFmlyCd>OTHR</SubFmlyCd>
+                        </Fmly>
+                    </Domn>
+                </BkTxCd>
+                <NtryDtls>
+                    <TxDtls>
+                        <Refs>
+                            <AcctSvcrRef>201604211036406432-038846158</AcctSvcrRef>
+
+                            <PmtInfId>2016042001334162</PmtInfId>
+
+
+                        </Refs>
+                        <AmtDtls>
+                            <InstdAmt>
+                                <Amt Ccy="EUR">657.60</Amt>
+                            </InstdAmt>
+                            <TxAmt>
+                                <Amt Ccy="EUR">657.60</Amt>
+                            </TxAmt>
+                        </AmtDtls>
+                        <RltdPties>
+                            <Dbtr>
+
+                                <Nm>Testing</Nm>
+
+
+                                <PstlAdr>
+
+                                    <Ctry>EE</Ctry>
+
+
+                                </PstlAdr>
+
+
+                                <Id>
+                                    <OrgId>
+
+                                        <Othr>
+                                            <Id>12544582</Id>
+
+                                            <SchmeNm>
+                                                <Cd>COID</Cd>
+                                            </SchmeNm>
+
+                                        </Othr>
+
+                                    </OrgId>
+                                </Id>
+
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </DbtrAcct>
+
+                            <Cdtr>
+
+                                <Nm>Testing</Nm>
+
+
+                            </Cdtr>
+
+                            <CdtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </CdtrAcct>
+
+
+                        </RltdPties>
+                        <RltdAgts>
+                            <DbtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>HABAEE2XXXX</BIC>
+
+
+                                </FinInstnId>
+                            </DbtrAgt>
+
+                            <CdtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                </FinInstnId>
+                            </CdtrAgt>
+
+
+                        </RltdAgts>
+
+
+                        <RmtInf>
+
+                            <Ustrd>Tellimus nr. 2016042022</Ustrd>
+
+
+                        </RmtInf>
+
+                    </TxDtls>
+                </NtryDtls>
+            </Ntry>
+
+            <Ntry>
+                <Amt Ccy="EUR">268.80</Amt>
+                <CdtDbtInd>CRDT</CdtDbtInd>
+                <Sts>BOOK</Sts>
+                <BookgDt>
+                    <Dt>2016-04-22</Dt>
+                </BookgDt>
+                <AcctSvcrRef>201604221036454011-038881166</AcctSvcrRef>
+                <BkTxCd>
+                    <Domn>
+
+                        <Cd>PMNT</Cd>
+                        <Fmly>
+
+
+                            <Cd>RCDT</Cd>
+
+
+                            <SubFmlyCd>OTHR</SubFmlyCd>
+                        </Fmly>
+                    </Domn>
+                </BkTxCd>
+                <NtryDtls>
+                    <TxDtls>
+                        <Refs>
+                            <AcctSvcrRef>201604221036454011-038881166</AcctSvcrRef>
+
+                            <PmtInfId>3B637D2</PmtInfId>
+
+
+                        </Refs>
+                        <AmtDtls>
+                            <InstdAmt>
+                                <Amt Ccy="EUR">268.80</Amt>
+                            </InstdAmt>
+                            <TxAmt>
+                                <Amt Ccy="EUR">268.80</Amt>
+                            </TxAmt>
+                        </AmtDtls>
+                        <RltdPties>
+                            <Dbtr>
+
+                                <Nm>Testing</Nm>
+
+
+                                <PstlAdr>
+
+                                    <Ctry>EE</Ctry>
+
+
+                                </PstlAdr>
+
+
+                                <Id>
+                                    <OrgId>
+
+                                        <Othr>
+                                            <Id>12688881</Id>
+
+                                            <SchmeNm>
+                                                <Cd>COID</Cd>
+                                            </SchmeNm>
+
+                                        </Othr>
+
+                                    </OrgId>
+                                </Id>
+
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </DbtrAcct>
+
+                            <Cdtr>
+
+                                <Nm>Testing</Nm>
+
+
+                            </Cdtr>
+
+                            <CdtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </CdtrAcct>
+
+
+                        </RltdPties>
+                        <RltdAgts>
+                            <DbtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>EKRDEE22XXX</BIC>
+
+
+                                </FinInstnId>
+                            </DbtrAgt>
+
+                            <CdtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                </FinInstnId>
+                            </CdtrAgt>
+
+
+                        </RltdAgts>
+
+
+                        <RmtInf>
+
+                            <Ustrd>Tellimus nr. 2016042109</Ustrd>
+
+
+                        </RmtInf>
+
+                    </TxDtls>
+                </NtryDtls>
+            </Ntry>
+
+            <Ntry>
+                <Amt Ccy="EUR">256.00</Amt>
+                <CdtDbtInd>CRDT</CdtDbtInd>
+                <Sts>BOOK</Sts>
+                <BookgDt>
+                    <Dt>2016-04-22</Dt>
+                </BookgDt>
+                <AcctSvcrRef>201604221036465084-038889881</AcctSvcrRef>
+                <BkTxCd>
+                    <Domn>
+
+                        <Cd>PMNT</Cd>
+                        <Fmly>
+
+
+                            <Cd>RCDT</Cd>
+
+
+                            <SubFmlyCd>OTHR</SubFmlyCd>
+                        </Fmly>
+                    </Domn>
+                </BkTxCd>
+                <NtryDtls>
+                    <TxDtls>
+                        <Refs>
+                            <AcctSvcrRef>201604221036465084-038889881</AcctSvcrRef>
+
+
+                            <InstrId>131</InstrId>
+
+                        </Refs>
+                        <AmtDtls>
+                            <InstdAmt>
+                                <Amt Ccy="EUR">256.00</Amt>
+                            </InstdAmt>
+                            <TxAmt>
+                                <Amt Ccy="EUR">256.00</Amt>
+                            </TxAmt>
+                        </AmtDtls>
+                        <RltdPties>
+                            <Dbtr>
+
+                                <Nm>Testing</Nm>
+
+
+                                <PstlAdr>
+
+                                    <Ctry>EE</Ctry>
+
+
+                                </PstlAdr>
+
+
+                                <Id>
+                                    <OrgId>
+
+                                        <Othr>
+                                            <Id>12314241</Id>
+
+                                            <SchmeNm>
+                                                <Cd>COID</Cd>
+                                            </SchmeNm>
+
+                                        </Othr>
+
+                                    </OrgId>
+                                </Id>
+
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </DbtrAcct>
+
+                            <Cdtr>
+
+                                <Nm>Testing</Nm>
+
+
+                            </Cdtr>
+
+                            <CdtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </CdtrAcct>
+
+
+                        </RltdPties>
+                        <RltdAgts>
+                            <DbtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </DbtrAgt>
+
+                            <CdtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </CdtrAgt>
+
+
+                        </RltdAgts>
+
+
+                        <RmtInf>
+
+                            <Ustrd>108/V</Ustrd>
+
+
+                            <Strd>
+                                <CdtrRefInf>
+                                    <Tp>
+                                        <CdOrPrtry>
+                                            <Cd>SCOR</Cd>
+                                        </CdOrPrtry>
+
+                                    </Tp>
+                                    <Ref>137834</Ref>
+                                </CdtrRefInf>
+                            </Strd>
+
+                        </RmtInf>
+
+                    </TxDtls>
+                </NtryDtls>
+            </Ntry>
+
+            <Ntry>
+                <Amt Ccy="EUR">43.20</Amt>
+                <CdtDbtInd>CRDT</CdtDbtInd>
+                <Sts>BOOK</Sts>
+                <BookgDt>
+                    <Dt>2016-04-22</Dt>
+                </BookgDt>
+                <AcctSvcrRef>201604221036468162-038891132</AcctSvcrRef>
+                <BkTxCd>
+                    <Domn>
+
+                        <Cd>PMNT</Cd>
+                        <Fmly>
+
+
+                            <Cd>RCDT</Cd>
+
+
+                            <SubFmlyCd>OTHR</SubFmlyCd>
+                        </Fmly>
+                    </Domn>
+                </BkTxCd>
+                <NtryDtls>
+                    <TxDtls>
+                        <Refs>
+                            <AcctSvcrRef>201604221036468162-038891132</AcctSvcrRef>
+
+                            <PmtInfId>3B65357</PmtInfId>
+
+
+                        </Refs>
+                        <AmtDtls>
+                            <InstdAmt>
+                                <Amt Ccy="EUR">43.20</Amt>
+                            </InstdAmt>
+                            <TxAmt>
+                                <Amt Ccy="EUR">43.20</Amt>
+                            </TxAmt>
+                        </AmtDtls>
+                        <RltdPties>
+                            <Dbtr>
+
+                                <Nm>Testing</Nm>
+
+
+                                <PstlAdr>
+
+                                    <Ctry>EE</Ctry>
+
+
+                                </PstlAdr>
+
+
+                                <Id>
+                                    <OrgId>
+
+                                        <Othr>
+                                            <Id>12688881</Id>
+
+                                            <SchmeNm>
+                                                <Cd>COID</Cd>
+                                            </SchmeNm>
+
+                                        </Othr>
+
+                                    </OrgId>
+                                </Id>
+
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </DbtrAcct>
+
+                            <Cdtr>
+
+                                <Nm>Testing</Nm>
+
+
+                            </Cdtr>
+
+                            <CdtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </CdtrAcct>
+
+
+                        </RltdPties>
+                        <RltdAgts>
+                            <DbtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>EKRDEE22XXX</BIC>
+
+
+                                </FinInstnId>
+                            </DbtrAgt>
+
+                            <CdtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                </FinInstnId>
+                            </CdtrAgt>
+
+
+                        </RltdAgts>
+
+
+                        <RmtInf>
+
+                            <Ustrd>Arve nr 431/NE Tellimus nr. 2016042109</Ustrd>
+
+
+                            <Strd>
+                                <CdtrRefInf>
+                                    <Tp>
+                                        <CdOrPrtry>
+                                            <Cd>SCOR</Cd>
+                                        </CdOrPrtry>
+
+                                    </Tp>
+                                    <Ref>156789</Ref>
+                                </CdtrRefInf>
+                            </Strd>
+
+                        </RmtInf>
+
+                    </TxDtls>
+                </NtryDtls>
+            </Ntry>
+
+            <Ntry>
+                <Amt Ccy="EUR">67.94</Amt>
+                <CdtDbtInd>DBIT</CdtDbtInd>
+                <Sts>BOOK</Sts>
+                <BookgDt>
+                    <Dt>2016-04-22</Dt>
+                </BookgDt>
+                <AcctSvcrRef>201604221036496822-038912234</AcctSvcrRef>
+                <BkTxCd>
+                    <Domn>
+
+                        <Cd>PMNT</Cd>
+                        <Fmly>
+
+
+                            <Cd>ICDT</Cd>
+
+
+                            <SubFmlyCd>OTHR</SubFmlyCd>
+                        </Fmly>
+                    </Domn>
+                </BkTxCd>
+                <NtryDtls>
+                    <TxDtls>
+                        <Refs>
+                            <AcctSvcrRef>201604221036496822-038912234</AcctSvcrRef>
+
+
+                            <InstrId>14</InstrId>
+
+                        </Refs>
+                        <AmtDtls>
+                            <InstdAmt>
+                                <Amt Ccy="EUR">67.94</Amt>
+                            </InstdAmt>
+                            <TxAmt>
+                                <Amt Ccy="EUR">67.94</Amt>
+                            </TxAmt>
+                        </AmtDtls>
+                        <RltdPties>
+                            <Dbtr>
+
+                                <Nm>Testing</Nm>
+
+
+                                <PstlAdr>
+
+                                    <Ctry>EE</Ctry>
+
+
+                                </PstlAdr>
+
+
+                                <Id>
+                                    <OrgId>
+
+                                        <Othr>
+                                            <Id>10998888</Id>
+
+                                            <SchmeNm>
+                                                <Cd>COID</Cd>
+                                            </SchmeNm>
+
+                                        </Othr>
+
+                                    </OrgId>
+                                </Id>
+
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </DbtrAcct>
+
+                            <Cdtr>
+
+                                <Nm>Testing</Nm>
+
+
+                            </Cdtr>
+
+                            <CdtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </CdtrAcct>
+
+
+                        </RltdPties>
+                        <RltdAgts>
+                            <DbtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </DbtrAgt>
+
+                            <CdtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>FOREEE2XXXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </CdtrAgt>
+
+
+                        </RltdAgts>
+
+
+                        <RmtInf>
+
+                            <Ustrd>Arve nr. 1738752</Ustrd>
+
+
+                        </RmtInf>
+
+                    </TxDtls>
+                </NtryDtls>
+            </Ntry>
+
+            <Ntry>
+                <Amt Ccy="EUR">60.84</Amt>
+                <CdtDbtInd>DBIT</CdtDbtInd>
+                <Sts>BOOK</Sts>
+                <BookgDt>
+                    <Dt>2016-04-22</Dt>
+                </BookgDt>
+                <AcctSvcrRef>201604221036496823-038912235</AcctSvcrRef>
+                <BkTxCd>
+                    <Domn>
+
+                        <Cd>PMNT</Cd>
+                        <Fmly>
+
+
+                            <Cd>ICDT</Cd>
+
+
+                            <SubFmlyCd>OTHR</SubFmlyCd>
+                        </Fmly>
+                    </Domn>
+                </BkTxCd>
+                <NtryDtls>
+                    <TxDtls>
+                        <Refs>
+                            <AcctSvcrRef>201604221036496823-038912235</AcctSvcrRef>
+
+
+                            <InstrId>13</InstrId>
+
+                        </Refs>
+                        <AmtDtls>
+                            <InstdAmt>
+                                <Amt Ccy="EUR">60.84</Amt>
+                            </InstdAmt>
+                            <TxAmt>
+                                <Amt Ccy="EUR">60.84</Amt>
+                            </TxAmt>
+                        </AmtDtls>
+                        <RltdPties>
+                            <Dbtr>
+
+                                <Nm>Testing</Nm>
+
+
+                                <PstlAdr>
+
+                                    <Ctry>EE</Ctry>
+
+
+                                </PstlAdr>
+
+
+                                <Id>
+                                    <OrgId>
+
+                                        <Othr>
+                                            <Id>10998888</Id>
+
+                                            <SchmeNm>
+                                                <Cd>COID</Cd>
+                                            </SchmeNm>
+
+                                        </Othr>
+
+                                    </OrgId>
+                                </Id>
+
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </DbtrAcct>
+
+                            <Cdtr>
+
+                                <Nm>Testing</Nm>
+
+
+                            </Cdtr>
+
+                            <CdtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </CdtrAcct>
+
+
+                        </RltdPties>
+                        <RltdAgts>
+                            <DbtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </DbtrAgt>
+
+                            <CdtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>HABAEE2XXXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </CdtrAgt>
+
+
+                        </RltdAgts>
+
+
+                        <RmtInf>
+
+                            <Ustrd>Arve nr. 000873-6LV2</Ustrd>
+
+
+                        </RmtInf>
+
+                    </TxDtls>
+                </NtryDtls>
+            </Ntry>
+
+            <Ntry>
+                <Amt Ccy="EUR">81.65</Amt>
+                <CdtDbtInd>DBIT</CdtDbtInd>
+                <Sts>BOOK</Sts>
+                <BookgDt>
+                    <Dt>2016-04-22</Dt>
+                </BookgDt>
+                <AcctSvcrRef>201604221036496824-038912236</AcctSvcrRef>
+                <BkTxCd>
+                    <Domn>
+
+                        <Cd>PMNT</Cd>
+                        <Fmly>
+
+
+                            <Cd>ICDT</Cd>
+
+
+                            <SubFmlyCd>OTHR</SubFmlyCd>
+                        </Fmly>
+                    </Domn>
+                </BkTxCd>
+                <NtryDtls>
+                    <TxDtls>
+                        <Refs>
+                            <AcctSvcrRef>201604221036496824-038912236</AcctSvcrRef>
+
+
+                            <InstrId>12</InstrId>
+
+                        </Refs>
+                        <AmtDtls>
+                            <InstdAmt>
+                                <Amt Ccy="EUR">81.65</Amt>
+                            </InstdAmt>
+                            <TxAmt>
+                                <Amt Ccy="EUR">81.65</Amt>
+                            </TxAmt>
+                        </AmtDtls>
+                        <RltdPties>
+                            <Dbtr>
+
+                                <Nm>Testing</Nm>
+
+
+                                <PstlAdr>
+
+                                    <Ctry>EE</Ctry>
+
+
+                                </PstlAdr>
+
+
+                                <Id>
+                                    <OrgId>
+
+                                        <Othr>
+                                            <Id>10998888</Id>
+
+                                            <SchmeNm>
+                                                <Cd>COID</Cd>
+                                            </SchmeNm>
+
+                                        </Othr>
+
+                                    </OrgId>
+                                </Id>
+
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </DbtrAcct>
+
+                            <Cdtr>
+
+                                <Nm>Testing</Nm>
+
+
+                            </Cdtr>
+
+                            <CdtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </CdtrAcct>
+
+
+                        </RltdPties>
+                        <RltdAgts>
+                            <DbtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </DbtrAgt>
+
+                            <CdtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>EEUHEE2XXXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </CdtrAgt>
+
+
+                        </RltdAgts>
+
+
+                        <RmtInf>
+
+                            <Ustrd>Arve nr. EEMAI150009796, EEMAI160002376, EEMAI160002438</Ustrd>
+
+
+                        </RmtInf>
+
+                    </TxDtls>
+                </NtryDtls>
+            </Ntry>
+
+            <Ntry>
+                <Amt Ccy="EUR">87.54</Amt>
+                <CdtDbtInd>DBIT</CdtDbtInd>
+                <Sts>BOOK</Sts>
+                <BookgDt>
+                    <Dt>2016-04-22</Dt>
+                </BookgDt>
+                <AcctSvcrRef>201604221036496825-038912237</AcctSvcrRef>
+                <BkTxCd>
+                    <Domn>
+
+                        <Cd>PMNT</Cd>
+                        <Fmly>
+
+
+                            <Cd>ICDT</Cd>
+
+
+                            <SubFmlyCd>OTHR</SubFmlyCd>
+                        </Fmly>
+                    </Domn>
+                </BkTxCd>
+                <NtryDtls>
+                    <TxDtls>
+                        <Refs>
+                            <AcctSvcrRef>201604221036496825-038912237</AcctSvcrRef>
+
+
+                            <InstrId>11</InstrId>
+
+                        </Refs>
+                        <AmtDtls>
+                            <InstdAmt>
+                                <Amt Ccy="EUR">87.54</Amt>
+                            </InstdAmt>
+                            <TxAmt>
+                                <Amt Ccy="EUR">87.54</Amt>
+                            </TxAmt>
+                        </AmtDtls>
+                        <RltdPties>
+                            <Dbtr>
+
+                                <Nm>Testing</Nm>
+
+
+                                <PstlAdr>
+
+                                    <Ctry>EE</Ctry>
+
+
+                                </PstlAdr>
+
+
+                                <Id>
+                                    <OrgId>
+
+                                        <Othr>
+                                            <Id>10998888</Id>
+
+                                            <SchmeNm>
+                                                <Cd>COID</Cd>
+                                            </SchmeNm>
+
+                                        </Othr>
+
+                                    </OrgId>
+                                </Id>
+
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </DbtrAcct>
+
+                            <Cdtr>
+
+                                <Nm>Testing</Nm>
+
+
+                            </Cdtr>
+
+                            <CdtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </CdtrAcct>
+
+
+                        </RltdPties>
+                        <RltdAgts>
+                            <DbtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </DbtrAgt>
+
+                            <CdtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>HABAEE2XXXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </CdtrAgt>
+
+
+                        </RltdAgts>
+
+
+                        <RmtInf>
+
+                            <Ustrd>Arve nr. 000308656</Ustrd>
+
+
+                        </RmtInf>
+
+                    </TxDtls>
+                </NtryDtls>
+            </Ntry>
+
+            <Ntry>
+                <Amt Ccy="EUR">95.12</Amt>
+                <CdtDbtInd>DBIT</CdtDbtInd>
+                <Sts>BOOK</Sts>
+                <BookgDt>
+                    <Dt>2016-04-22</Dt>
+                </BookgDt>
+                <AcctSvcrRef>201604221036496826-038912238</AcctSvcrRef>
+                <BkTxCd>
+                    <Domn>
+
+                        <Cd>PMNT</Cd>
+                        <Fmly>
+
+
+                            <Cd>ICDT</Cd>
+
+
+                            <SubFmlyCd>OTHR</SubFmlyCd>
+                        </Fmly>
+                    </Domn>
+                </BkTxCd>
+                <NtryDtls>
+                    <TxDtls>
+                        <Refs>
+                            <AcctSvcrRef>201604221036496826-038912238</AcctSvcrRef>
+
+
+                            <InstrId>10</InstrId>
+
+                        </Refs>
+                        <AmtDtls>
+                            <InstdAmt>
+                                <Amt Ccy="EUR">95.12</Amt>
+                            </InstdAmt>
+                            <TxAmt>
+                                <Amt Ccy="EUR">95.12</Amt>
+                            </TxAmt>
+                        </AmtDtls>
+                        <RltdPties>
+                            <Dbtr>
+
+                                <Nm>Testing</Nm>
+
+
+                                <PstlAdr>
+
+                                    <Ctry>EE</Ctry>
+
+
+                                </PstlAdr>
+
+
+                                <Id>
+                                    <OrgId>
+
+                                        <Othr>
+                                            <Id>10998888</Id>
+
+                                            <SchmeNm>
+                                                <Cd>COID</Cd>
+                                            </SchmeNm>
+
+                                        </Othr>
+
+                                    </OrgId>
+                                </Id>
+
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </DbtrAcct>
+
+                            <Cdtr>
+
+                                <Nm>Testing</Nm>
+
+
+                            </Cdtr>
+
+                            <CdtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </CdtrAcct>
+
+
+                        </RltdPties>
+                        <RltdAgts>
+                            <DbtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </DbtrAgt>
+
+                            <CdtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>HABAEE2XXXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </CdtrAgt>
+
+
+                        </RltdAgts>
+
+
+                        <RmtInf>
+
+                            <Ustrd>Arve nr. 000308657</Ustrd>
+
+
+                        </RmtInf>
+
+                    </TxDtls>
+                </NtryDtls>
+            </Ntry>
+
+            <Ntry>
+                <Amt Ccy="EUR">95.52</Amt>
+                <CdtDbtInd>DBIT</CdtDbtInd>
+                <Sts>BOOK</Sts>
+                <BookgDt>
+                    <Dt>2016-04-22</Dt>
+                </BookgDt>
+                <AcctSvcrRef>201604221036496827-038912239</AcctSvcrRef>
+                <BkTxCd>
+                    <Domn>
+
+                        <Cd>PMNT</Cd>
+                        <Fmly>
+
+
+                            <Cd>ICDT</Cd>
+
+
+                            <SubFmlyCd>OTHR</SubFmlyCd>
+                        </Fmly>
+                    </Domn>
+                </BkTxCd>
+                <NtryDtls>
+                    <TxDtls>
+                        <Refs>
+                            <AcctSvcrRef>201604221036496827-038912239</AcctSvcrRef>
+
+
+                            <InstrId>9</InstrId>
+
+                        </Refs>
+                        <AmtDtls>
+                            <InstdAmt>
+                                <Amt Ccy="EUR">95.52</Amt>
+                            </InstdAmt>
+                            <TxAmt>
+                                <Amt Ccy="EUR">95.52</Amt>
+                            </TxAmt>
+                        </AmtDtls>
+                        <RltdPties>
+                            <Dbtr>
+
+                                <Nm>Testing</Nm>
+
+
+                                <PstlAdr>
+
+                                    <Ctry>EE</Ctry>
+
+
+                                </PstlAdr>
+
+
+                                <Id>
+                                    <OrgId>
+
+                                        <Othr>
+                                            <Id>10998888</Id>
+
+                                            <SchmeNm>
+                                                <Cd>COID</Cd>
+                                            </SchmeNm>
+
+                                        </Othr>
+
+                                    </OrgId>
+                                </Id>
+
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </DbtrAcct>
+
+                            <Cdtr>
+
+                                <Nm>Testing</Nm>
+
+
+                            </Cdtr>
+
+                            <CdtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </CdtrAcct>
+
+
+                        </RltdPties>
+                        <RltdAgts>
+                            <DbtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </DbtrAgt>
+
+                            <CdtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>HABAEE2XXXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </CdtrAgt>
+
+
+                        </RltdAgts>
+
+
+                        <RmtInf>
+
+                            <Ustrd>Arve nr. 000308661</Ustrd>
+
+
+                        </RmtInf>
+
+                    </TxDtls>
+                </NtryDtls>
+            </Ntry>
+
+            <Ntry>
+                <Amt Ccy="EUR">76.59</Amt>
+                <CdtDbtInd>DBIT</CdtDbtInd>
+                <Sts>BOOK</Sts>
+                <BookgDt>
+                    <Dt>2016-04-22</Dt>
+                </BookgDt>
+                <AcctSvcrRef>201604221036496828-038912240</AcctSvcrRef>
+                <BkTxCd>
+                    <Domn>
+
+                        <Cd>PMNT</Cd>
+                        <Fmly>
+
+
+                            <Cd>ICDT</Cd>
+
+
+                            <SubFmlyCd>OTHR</SubFmlyCd>
+                        </Fmly>
+                    </Domn>
+                </BkTxCd>
+                <NtryDtls>
+                    <TxDtls>
+                        <Refs>
+                            <AcctSvcrRef>201604221036496828-038912240</AcctSvcrRef>
+
+
+                            <InstrId>8</InstrId>
+
+                        </Refs>
+                        <AmtDtls>
+                            <InstdAmt>
+                                <Amt Ccy="EUR">76.59</Amt>
+                            </InstdAmt>
+                            <TxAmt>
+                                <Amt Ccy="EUR">76.59</Amt>
+                            </TxAmt>
+                        </AmtDtls>
+                        <RltdPties>
+                            <Dbtr>
+
+                                <Nm>Testing</Nm>
+
+
+                                <PstlAdr>
+
+                                    <Ctry>EE</Ctry>
+
+
+                                </PstlAdr>
+
+
+                                <Id>
+                                    <OrgId>
+
+                                        <Othr>
+                                            <Id>10998888</Id>
+
+                                            <SchmeNm>
+                                                <Cd>COID</Cd>
+                                            </SchmeNm>
+
+                                        </Othr>
+
+                                    </OrgId>
+                                </Id>
+
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </DbtrAcct>
+
+                            <Cdtr>
+
+                                <Nm>Testing</Nm>
+
+
+                            </Cdtr>
+
+                            <CdtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </CdtrAcct>
+
+
+                        </RltdPties>
+                        <RltdAgts>
+                            <DbtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </DbtrAgt>
+
+                            <CdtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>HABAEE2XXXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </CdtrAgt>
+
+
+                        </RltdAgts>
+
+
+                        <RmtInf>
+
+                            <Ustrd>Arve nr. 000308653</Ustrd>
+
+
+                        </RmtInf>
+
+                    </TxDtls>
+                </NtryDtls>
+            </Ntry>
+
+            <Ntry>
+                <Amt Ccy="EUR">88.37</Amt>
+                <CdtDbtInd>DBIT</CdtDbtInd>
+                <Sts>BOOK</Sts>
+                <BookgDt>
+                    <Dt>2016-04-22</Dt>
+                </BookgDt>
+                <AcctSvcrRef>201604221036496829-038912241</AcctSvcrRef>
+                <BkTxCd>
+                    <Domn>
+
+                        <Cd>PMNT</Cd>
+                        <Fmly>
+
+
+                            <Cd>ICDT</Cd>
+
+
+                            <SubFmlyCd>OTHR</SubFmlyCd>
+                        </Fmly>
+                    </Domn>
+                </BkTxCd>
+                <NtryDtls>
+                    <TxDtls>
+                        <Refs>
+                            <AcctSvcrRef>201604221036496829-038912241</AcctSvcrRef>
+
+
+                            <InstrId>7</InstrId>
+
+                        </Refs>
+                        <AmtDtls>
+                            <InstdAmt>
+                                <Amt Ccy="EUR">88.37</Amt>
+                            </InstdAmt>
+                            <TxAmt>
+                                <Amt Ccy="EUR">88.37</Amt>
+                            </TxAmt>
+                        </AmtDtls>
+                        <RltdPties>
+                            <Dbtr>
+
+                                <Nm>Testing</Nm>
+
+
+                                <PstlAdr>
+
+                                    <Ctry>EE</Ctry>
+
+
+                                </PstlAdr>
+
+
+                                <Id>
+                                    <OrgId>
+
+                                        <Othr>
+                                            <Id>10998888</Id>
+
+                                            <SchmeNm>
+                                                <Cd>COID</Cd>
+                                            </SchmeNm>
+
+                                        </Othr>
+
+                                    </OrgId>
+                                </Id>
+
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </DbtrAcct>
+
+                            <Cdtr>
+
+                                <Nm>Testing</Nm>
+
+
+                            </Cdtr>
+
+                            <CdtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </CdtrAcct>
+
+
+                        </RltdPties>
+                        <RltdAgts>
+                            <DbtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </DbtrAgt>
+
+                            <CdtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>HABAEE2XXXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </CdtrAgt>
+
+
+                        </RltdAgts>
+
+
+                        <RmtInf>
+
+                            <Ustrd>Arve nr. 000308670</Ustrd>
+
+
+                        </RmtInf>
+
+                    </TxDtls>
+                </NtryDtls>
+            </Ntry>
+
+            <Ntry>
+                <Amt Ccy="EUR">27.67</Amt>
+                <CdtDbtInd>DBIT</CdtDbtInd>
+                <Sts>BOOK</Sts>
+                <BookgDt>
+                    <Dt>2016-04-22</Dt>
+                </BookgDt>
+                <AcctSvcrRef>201604221036496830-038912242</AcctSvcrRef>
+                <BkTxCd>
+                    <Domn>
+
+                        <Cd>PMNT</Cd>
+                        <Fmly>
+
+
+                            <Cd>ICDT</Cd>
+
+
+                            <SubFmlyCd>OTHR</SubFmlyCd>
+                        </Fmly>
+                    </Domn>
+                </BkTxCd>
+                <NtryDtls>
+                    <TxDtls>
+                        <Refs>
+                            <AcctSvcrRef>201604221036496830-038912242</AcctSvcrRef>
+
+
+                            <InstrId>6</InstrId>
+
+                        </Refs>
+                        <AmtDtls>
+                            <InstdAmt>
+                                <Amt Ccy="EUR">27.67</Amt>
+                            </InstdAmt>
+                            <TxAmt>
+                                <Amt Ccy="EUR">27.67</Amt>
+                            </TxAmt>
+                        </AmtDtls>
+                        <RltdPties>
+                            <Dbtr>
+
+                                <Nm>Testing</Nm>
+
+
+                                <PstlAdr>
+
+                                    <Ctry>EE</Ctry>
+
+
+                                </PstlAdr>
+
+
+                                <Id>
+                                    <OrgId>
+
+                                        <Othr>
+                                            <Id>10998888</Id>
+
+                                            <SchmeNm>
+                                                <Cd>COID</Cd>
+                                            </SchmeNm>
+
+                                        </Othr>
+
+                                    </OrgId>
+                                </Id>
+
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </DbtrAcct>
+
+                            <Cdtr>
+
+                                <Nm>Testing</Nm>
+
+
+                            </Cdtr>
+
+                            <CdtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </CdtrAcct>
+
+
+                        </RltdPties>
+                        <RltdAgts>
+                            <DbtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </DbtrAgt>
+
+                            <CdtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>HABAEE2XXXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </CdtrAgt>
+
+
+                        </RltdAgts>
+
+
+                        <RmtInf>
+
+                            <Ustrd>Arve nr. 000308658</Ustrd>
+
+
+                        </RmtInf>
+
+                    </TxDtls>
+                </NtryDtls>
+            </Ntry>
+
+            <Ntry>
+                <Amt Ccy="EUR">35.34</Amt>
+                <CdtDbtInd>DBIT</CdtDbtInd>
+                <Sts>BOOK</Sts>
+                <BookgDt>
+                    <Dt>2016-04-22</Dt>
+                </BookgDt>
+                <AcctSvcrRef>201604221036496831-038912243</AcctSvcrRef>
+                <BkTxCd>
+                    <Domn>
+
+                        <Cd>PMNT</Cd>
+                        <Fmly>
+
+
+                            <Cd>ICDT</Cd>
+
+
+                            <SubFmlyCd>OTHR</SubFmlyCd>
+                        </Fmly>
+                    </Domn>
+                </BkTxCd>
+                <NtryDtls>
+                    <TxDtls>
+                        <Refs>
+                            <AcctSvcrRef>201604221036496831-038912243</AcctSvcrRef>
+
+
+                            <InstrId>5</InstrId>
+
+                        </Refs>
+                        <AmtDtls>
+                            <InstdAmt>
+                                <Amt Ccy="EUR">35.34</Amt>
+                            </InstdAmt>
+                            <TxAmt>
+                                <Amt Ccy="EUR">35.34</Amt>
+                            </TxAmt>
+                        </AmtDtls>
+                        <RltdPties>
+                            <Dbtr>
+
+                                <Nm>Testing</Nm>
+
+
+                                <PstlAdr>
+
+                                    <Ctry>EE</Ctry>
+
+
+                                </PstlAdr>
+
+
+                                <Id>
+                                    <OrgId>
+
+                                        <Othr>
+                                            <Id>10998888</Id>
+
+                                            <SchmeNm>
+                                                <Cd>COID</Cd>
+                                            </SchmeNm>
+
+                                        </Othr>
+
+                                    </OrgId>
+                                </Id>
+
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </DbtrAcct>
+
+                            <Cdtr>
+
+                                <Nm>Testing</Nm>
+
+
+                            </Cdtr>
+
+                            <CdtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </CdtrAcct>
+
+
+                        </RltdPties>
+                        <RltdAgts>
+                            <DbtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </DbtrAgt>
+
+                            <CdtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>HABAEE2XXXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </CdtrAgt>
+
+
+                        </RltdAgts>
+
+
+                        <RmtInf>
+
+                            <Ustrd>Arve nr. 000308462</Ustrd>
+
+
+                        </RmtInf>
+
+                    </TxDtls>
+                </NtryDtls>
+            </Ntry>
+
+            <Ntry>
+                <Amt Ccy="EUR">20.40</Amt>
+                <CdtDbtInd>CRDT</CdtDbtInd>
+                <Sts>BOOK</Sts>
+                <BookgDt>
+                    <Dt>2016-04-22</Dt>
+                </BookgDt>
+                <AcctSvcrRef>201604221036499585-038913012</AcctSvcrRef>
+                <BkTxCd>
+                    <Domn>
+
+                        <Cd>PMNT</Cd>
+                        <Fmly>
+
+
+                            <Cd>RCDT</Cd>
+
+
+                            <SubFmlyCd>OTHR</SubFmlyCd>
+                        </Fmly>
+                    </Domn>
+                </BkTxCd>
+                <NtryDtls>
+                    <TxDtls>
+                        <Refs>
+                            <AcctSvcrRef>201604221036499585-038913012</AcctSvcrRef>
+
+
+                            <InstrId>4</InstrId>
+
+                        </Refs>
+                        <AmtDtls>
+                            <InstdAmt>
+                                <Amt Ccy="EUR">20.40</Amt>
+                            </InstdAmt>
+                            <TxAmt>
+                                <Amt Ccy="EUR">20.40</Amt>
+                            </TxAmt>
+                        </AmtDtls>
+                        <RltdPties>
+                            <Dbtr>
+
+                                <Nm>Testing</Nm>
+
+
+                                <PstlAdr>
+
+                                    <Ctry>EE</Ctry>
+
+
+                                </PstlAdr>
+
+
+                                <Id>
+                                    <PrvtId>
+
+                                        <Othr>
+                                            <Id>37706086029</Id>
+
+                                            <SchmeNm>
+                                                <Cd>NIDN</Cd>
+                                            </SchmeNm>
+
+                                        </Othr>
+
+                                    </PrvtId>
+                                </Id>
+
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </DbtrAcct>
+
+                            <Cdtr>
+
+                                <Nm>Testing</Nm>
+
+
+                            </Cdtr>
+
+                            <CdtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </CdtrAcct>
+
+
+                        </RltdPties>
+                        <RltdAgts>
+                            <DbtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </DbtrAgt>
+
+                            <CdtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </CdtrAgt>
+
+
+                        </RltdAgts>
+
+
+                        <RmtInf>
+
+                            <Ustrd>Tellimuse: 2016042213</Ustrd>
+
+
+                            <Strd>
+                                <CdtrRefInf>
+                                    <Tp>
+                                        <CdOrPrtry>
+                                            <Cd>SCOR</Cd>
+                                        </CdOrPrtry>
+
+                                    </Tp>
+                                    <Ref>20160422139</Ref>
+                                </CdtrRefInf>
+                            </Strd>
+
+                        </RmtInf>
+
+                    </TxDtls>
+                </NtryDtls>
+            </Ntry>
+
+            <Ntry>
+                <Amt Ccy="EUR">1.20</Amt>
+                <CdtDbtInd>CRDT</CdtDbtInd>
+                <Sts>BOOK</Sts>
+                <BookgDt>
+                    <Dt>2016-04-22</Dt>
+                </BookgDt>
+                <AcctSvcrRef>201604221036499803-038913111</AcctSvcrRef>
+                <BkTxCd>
+                    <Domn>
+
+                        <Cd>PMNT</Cd>
+                        <Fmly>
+
+
+                            <Cd>RCDT</Cd>
+
+
+                            <SubFmlyCd>OTHR</SubFmlyCd>
+                        </Fmly>
+                    </Domn>
+                </BkTxCd>
+                <NtryDtls>
+                    <TxDtls>
+                        <Refs>
+                            <AcctSvcrRef>201604221036499803-038913111</AcctSvcrRef>
+
+
+                            <InstrId>5</InstrId>
+
+                        </Refs>
+                        <AmtDtls>
+                            <InstdAmt>
+                                <Amt Ccy="EUR">1.20</Amt>
+                            </InstdAmt>
+                            <TxAmt>
+                                <Amt Ccy="EUR">1.20</Amt>
+                            </TxAmt>
+                        </AmtDtls>
+                        <RltdPties>
+                            <Dbtr>
+
+                                <Nm>Testing</Nm>
+
+
+                                <PstlAdr>
+
+                                    <Ctry>EE</Ctry>
+
+
+                                </PstlAdr>
+
+
+                                <Id>
+                                    <PrvtId>
+
+                                        <Othr>
+                                            <Id>37706086029</Id>
+
+                                            <SchmeNm>
+                                                <Cd>NIDN</Cd>
+                                            </SchmeNm>
+
+                                        </Othr>
+
+                                    </PrvtId>
+                                </Id>
+
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </DbtrAcct>
+
+                            <Cdtr>
+
+                                <Nm>Testing</Nm>
+
+
+                            </Cdtr>
+
+                            <CdtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </CdtrAcct>
+
+
+                        </RltdPties>
+                        <RltdAgts>
+                            <DbtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </DbtrAgt>
+
+                            <CdtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </CdtrAgt>
+
+
+                        </RltdAgts>
+
+
+                        <RmtInf>
+
+                            <Ustrd>Tellimuse: 2016042215</Ustrd>
+
+
+                            <Strd>
+                                <CdtrRefInf>
+                                    <Tp>
+                                        <CdOrPrtry>
+                                            <Cd>SCOR</Cd>
+                                        </CdOrPrtry>
+
+                                    </Tp>
+                                    <Ref>20160422155</Ref>
+                                </CdtrRefInf>
+                            </Strd>
+
+                        </RmtInf>
+
+                    </TxDtls>
+                </NtryDtls>
+            </Ntry>
+
+            <Ntry>
+                <Amt Ccy="EUR">1.20</Amt>
+                <CdtDbtInd>CRDT</CdtDbtInd>
+                <Sts>BOOK</Sts>
+                <BookgDt>
+                    <Dt>2016-04-22</Dt>
+                </BookgDt>
+                <AcctSvcrRef>201604221036499815-038913116</AcctSvcrRef>
+                <BkTxCd>
+                    <Domn>
+
+                        <Cd>PMNT</Cd>
+                        <Fmly>
+
+
+                            <Cd>RCDT</Cd>
+
+
+                            <SubFmlyCd>OTHR</SubFmlyCd>
+                        </Fmly>
+                    </Domn>
+                </BkTxCd>
+                <NtryDtls>
+                    <TxDtls>
+                        <Refs>
+                            <AcctSvcrRef>201604221036499815-038913116</AcctSvcrRef>
+
+
+                            <InstrId>24</InstrId>
+
+                        </Refs>
+                        <AmtDtls>
+                            <InstdAmt>
+                                <Amt Ccy="EUR">1.20</Amt>
+                            </InstdAmt>
+                            <TxAmt>
+                                <Amt Ccy="EUR">1.20</Amt>
+                            </TxAmt>
+                        </AmtDtls>
+                        <RltdPties>
+                            <Dbtr>
+
+                                <Nm>Testing</Nm>
+
+
+                                <PstlAdr>
+
+                                    <Ctry>EE</Ctry>
+
+
+                                </PstlAdr>
+
+
+                                <Id>
+                                    <PrvtId>
+
+                                        <Othr>
+                                            <Id>38107300238</Id>
+
+                                            <SchmeNm>
+                                                <Cd>NIDN</Cd>
+                                            </SchmeNm>
+
+                                        </Othr>
+
+                                    </PrvtId>
+                                </Id>
+
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </DbtrAcct>
+
+                            <Cdtr>
+
+                                <Nm>Testing</Nm>
+
+
+                            </Cdtr>
+
+                            <CdtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </CdtrAcct>
+
+
+                        </RltdPties>
+                        <RltdAgts>
+                            <DbtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </DbtrAgt>
+
+                            <CdtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </CdtrAgt>
+
+
+                        </RltdAgts>
+
+
+                        <RmtInf>
+
+                            <Ustrd>Tellimuse: 2016042216</Ustrd>
+
+
+                            <Strd>
+                                <CdtrRefInf>
+                                    <Tp>
+                                        <CdOrPrtry>
+                                            <Cd>SCOR</Cd>
+                                        </CdOrPrtry>
+
+                                    </Tp>
+                                    <Ref>20160422168</Ref>
+                                </CdtrRefInf>
+                            </Strd>
+
+                        </RmtInf>
+
+                    </TxDtls>
+                </NtryDtls>
+            </Ntry>
+
+            <Ntry>
+                <Amt Ccy="EUR">1.20</Amt>
+                <CdtDbtInd>CRDT</CdtDbtInd>
+                <Sts>BOOK</Sts>
+                <BookgDt>
+                    <Dt>2016-04-22</Dt>
+                </BookgDt>
+                <AcctSvcrRef>201604221036499842-038913135</AcctSvcrRef>
+                <BkTxCd>
+                    <Domn>
+
+                        <Cd>PMNT</Cd>
+                        <Fmly>
+
+
+                            <Cd>RCDT</Cd>
+
+
+                            <SubFmlyCd>OTHR</SubFmlyCd>
+                        </Fmly>
+                    </Domn>
+                </BkTxCd>
+                <NtryDtls>
+                    <TxDtls>
+                        <Refs>
+                            <AcctSvcrRef>201604221036499842-038913135</AcctSvcrRef>
+
+
+                            <InstrId>6</InstrId>
+
+                        </Refs>
+                        <AmtDtls>
+                            <InstdAmt>
+                                <Amt Ccy="EUR">1.20</Amt>
+                            </InstdAmt>
+                            <TxAmt>
+                                <Amt Ccy="EUR">1.20</Amt>
+                            </TxAmt>
+                        </AmtDtls>
+                        <RltdPties>
+                            <Dbtr>
+
+                                <Nm>Testing</Nm>
+
+
+                                <PstlAdr>
+
+                                    <Ctry>EE</Ctry>
+
+
+                                </PstlAdr>
+
+
+                                <Id>
+                                    <PrvtId>
+
+                                        <Othr>
+                                            <Id>37706086029</Id>
+
+                                            <SchmeNm>
+                                                <Cd>NIDN</Cd>
+                                            </SchmeNm>
+
+                                        </Othr>
+
+                                    </PrvtId>
+                                </Id>
+
+                            </Dbtr>
+                            <DbtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </DbtrAcct>
+
+                            <Cdtr>
+
+                                <Nm>Testing</Nm>
+
+
+                            </Cdtr>
+
+                            <CdtrAcct>
+                                <Id>
+
+                                    <IBAN>EE197700000000000000</IBAN>
+
+                                </Id>
+                            </CdtrAcct>
+
+
+                        </RltdPties>
+                        <RltdAgts>
+                            <DbtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </DbtrAgt>
+
+                            <CdtrAgt>
+                                <FinInstnId>
+
+                                    <BIC>LHVBEE22XXX</BIC>
+
+
+                                    <Nm>Testing</Nm>
+
+                                </FinInstnId>
+                            </CdtrAgt>
+
+
+                        </RltdAgts>
+
+
+                        <RmtInf>
+
+                            <Ustrd>Tellimuse: 2016042217</Ustrd>
+
+
+                            <Strd>
+                                <CdtrRefInf>
+                                    <Tp>
+                                        <CdOrPrtry>
+                                            <Cd>SCOR</Cd>
+                                        </CdOrPrtry>
+
+                                    </Tp>
+                                    <Ref>20160422171</Ref>
+                                </CdtrRefInf>
+                            </Strd>
+
+                        </RmtInf>
+
+                    </TxDtls>
+                </NtryDtls>
+            </Ntry>
+
+        </Stmt>
+
+    </BkToCstmrStmt>
+</Document>

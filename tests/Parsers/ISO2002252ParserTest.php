@@ -2,7 +2,7 @@
 
 use Mockery as m;
 
-class ISO20022ParserTest extends PHPUnit_Framework_TestCase
+class ISO2002252ParserTest extends PHPUnit_Framework_TestCase
 {
 
     private $RESOURCE_PATH = '/../resources/';
@@ -48,6 +48,7 @@ class ISO20022ParserTest extends PHPUnit_Framework_TestCase
         $expected = new \Entities\Payment('123.45', '2016010700183611-1', '2016041921', 'Company OÜ');
         $this->assertEquals($expected, $payments->offsetGet(2));
     }
+
     public function tearDown()
     {
         m::close();
@@ -56,6 +57,6 @@ class ISO20022ParserTest extends PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->_parser = new \Parsers\ISO20022Parser();
+        $this->_parser = new \Parsers\ISO2002252Parser();
     }
 }
