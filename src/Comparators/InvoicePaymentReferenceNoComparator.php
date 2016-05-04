@@ -25,13 +25,13 @@ class InvoicePaymentReferenceNoComparator implements Comparator
                     if ($invoice instanceof Invoice) {
                         $invoiceNoMatch = false;
                         if ($invoice->getInvoiceNo() != '') {
-                            $invoiceNoMatch = strpos($payment->getDescription(), $invoice->getInvoiceNo()) !== false;
+                            $invoiceNoMatch = strpos(strtoupper($payment->getDescription()), strtoupper($invoice->getInvoiceNo())) !== false;
                         }
                         $orderNoMatch = false;
                         if ($invoice->getOrderNo() != '') {
-                            $orderNoMatch = strpos($payment->getDescription(), $invoice->getOrderNo()) !== false;
+                            $orderNoMatch = strpos(strtoupper($payment->getDescription()), strtoupper($invoice->getOrderNo())) !== false;
                         }
-                        if (($payment->getReferenceNo() == $invoice->getReferenceNo() && $payment->getReferenceNo() != '')
+                        if ((strtoupper($payment->getReferenceNo()) == strtoupper($invoice->getReferenceNo()) && $payment->getReferenceNo() != '')
                             || ($orderNoMatch || $invoiceNoMatch)
                         ) {
                             $payment->setRelatedInvoice($invoice);
