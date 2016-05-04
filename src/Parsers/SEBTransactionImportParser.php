@@ -35,7 +35,7 @@ class SEBTransactionImportParser extends AbstractParser implements Parser
         $payerNamePadding = 7;
 
         $result = new \ArrayObject();
-        $rows = explode("\n", $stream);
+        $rows = explode(PHP_EOL, $stream);
         $trimmedRows = $rows;
         for ($i = 0; $i < count($trimmedRows); $i++) {
             if ($trimmedRows[$i] == '#7') {
