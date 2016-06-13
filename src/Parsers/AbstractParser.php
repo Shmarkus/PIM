@@ -28,7 +28,7 @@ abstract class AbstractParser
      *
      * @var string[]
      */
-    protected $_patterns = ['/[0-9]+.[a-zA-Z]+/', '/20[1-3][0-9][0-1][0-9][0-3][0-9][0-9]{2}/'];
+    protected $_patterns = ['/[0-9]+\/[a-zA-Z]+/', '/20[1-3][0-9][0-1][0-9][0-3][0-9][0-9]{2}/'];
 
     /**
      * AbstractParser constructor.

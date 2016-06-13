@@ -29,9 +29,9 @@ class NordeaParser extends AbstractParser implements Parser
     public function parseData($stream)
     {
         $result = new \ArrayObject();
-        $rows = explode("\n", $stream);
+        $rows = explode("\r\n", $stream);
         foreach (array_filter($rows) as $row) {
-            $item = explode(";", $row);
+            $item = explode('";"', $row);
             if (count($item) == 12) {
                 //multiple invoices paid
                 if ($matches = $this->_getMatches($this->_stripQuotes($item[9]))) {
