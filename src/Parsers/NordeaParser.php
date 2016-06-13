@@ -29,7 +29,7 @@ class NordeaParser extends AbstractParser implements Parser
     public function parseData($stream)
     {
         $result = new \ArrayObject();
-        $rows = explode("\r\n", $stream);
+        $rows = explode("\n", $stream);
         foreach (array_filter($rows) as $row) {
             $item = explode('";"', $row);
             if (count($item) == 12) {
